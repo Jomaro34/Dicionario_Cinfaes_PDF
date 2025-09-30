@@ -1,54 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<title>Dicionário PDF - Pesquisa</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  body { margin: 0; font-family: sans-serif; }
-  #search-bar {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid #333;
-  }
-  #iframe-container { height: calc(100vh - 50px); }
-  iframe { width: 100%; height: 100%; border: none; }
-</style>
+  <meta charset="UTF-8">
+  <title>Dicionário PDF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+    iframe, embed {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
 </head>
 <body>
-
-<input type="text" id="search-bar" placeholder="Pesquisar palavra...">
-<div id="iframe-container">
-  <iframe id="dicionario.pdf"></iframe>
-</div>
-
-<script>
-let palavras = [];
-
-// Carregar JSON com palavras e páginas
-fetch('palavras.json')
-  .then(res => res.json())
-  .then(data => palavras = data);
-
-const searchBar = document.getElementById('search-bar');
-const pdfFrame = document.getElementById('pdf-frame');
-
-searchBar.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    const palavraInput = searchBar.value.toLowerCase().trim();
-    const item = palavras.find(p => p.Palavra.toLowerCase() === palavraInput);
-    if (item && item.Pagina) {
-      // Abrir PDF na página correta
-      pdfFrame.src = `dicionario.pdf#page=${item.Pagina}`;
-    } else {
-      alert('Palavra não encontrada ou página não definida.');
-    }
-  }
-});
-</script>
-
+  <!-- Usando embed para mostrar o PDF -->
+  <embed src="dicionario.pdf" type="application/pdf">
+  <!-- Alternativa: iframe
+  <iframe src="dicionario.pdf"></iframe>
+  -->
 </body>
 </html>
