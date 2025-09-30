@@ -42,7 +42,7 @@ searchBar.addEventListener('keypress', (e) => {
     const item = palavras.find(p => p.Palavra.toLowerCase() === palavraInput);
     if (item && item.Pagina) {
       // Abrir PDF na página correta
-      pdfFrame.src = `web/viewer.html?file=../dicionario.pdf#page=${item.Pagina}`;
+      pdfFrame.src = `dicionario.pdf#page=${item.Pagina}`;
     } else {
       alert('Palavra não encontrada ou página não definida.');
     }
