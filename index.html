@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Dicionário PDF.js</title>
+  <title>Dicionário PDF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     html, body {
@@ -11,7 +11,7 @@
       height: 100%;
       width: 100%;
     }
-    iframe {
+    iframe, embed {
       width: 100%;
       height: 100%;
       border: none;
@@ -19,7 +19,10 @@
   </style>
 </head>
 <body>
-  <!-- Iframe apontando para viewer.html com caminho relativo do PDF -->
-  <iframe src="web/viewer.html?file=dicionario.pdf"></iframe>
+  <!-- Usando embed para mostrar o PDF -->
+  <embed src="dicionario.pdf" type="application/pdf">
+  <!-- Alternativa: iframe
+  <iframe src="dicionario.pdf"></iframe>
+  -->
 </body>
 </html>
