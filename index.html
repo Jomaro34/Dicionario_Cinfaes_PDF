@@ -2,27 +2,15 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Dicionário PDF</title>
+  <title>Dicionário PDF - Pesquisa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-    }
-    iframe, embed {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+    body, html { margin: 0; padding: 0; height: 100%; width: 100%; }
+    iframe { width: 100%; height: 100%; border: none; }
   </style>
 </head>
 <body>
-  <!-- Usando embed para mostrar o PDF -->
-  <embed src="dicionario.pdf" type="application/pdf">
-  <!-- Alternativa: iframe
-  <iframe src="dicionario.pdf"></iframe>
-  -->
+  <!-- Abre o PDF com PDF.js -->
+  <iframe src="web/viewer.html?file=../dicionario.pdf"></iframe>
 </body>
 </html>
