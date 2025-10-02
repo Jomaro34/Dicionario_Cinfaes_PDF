@@ -1,2 +1,2 @@
-# Colectanea_Proverbios
-Só para mim
+# Dicionário de Cinfães em formato Livro e em formato PDF
+
